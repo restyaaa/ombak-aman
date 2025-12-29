@@ -10,12 +10,12 @@ from utils import forecast_for_date
 # PAGE CONFIG
 # =====================
 st.set_page_config(
-    page_title="Sistem Rekomendasi Jam Aman Wisata Pantai",
+    page_title="Sistem Rekomendasi Jam Aman Wisata Pantai Ujung Pandaran",
     layout="wide"
 )
 
-st.title("🌊 Sistem Rekomendasi Jam Aman Wisata Pantai")
-st.caption("Prediksi 24 jam berbasis Random Forest & Knowledge-Based Rules")
+st.title("🌊 Sistem Rekomendasi Jam Aman Wisata Pantai Ujung Pandaran")
+st.caption("Prediksi 24 jam berbasis Random Forest Regression & Knowledge-Based Rules")
 
 # =====================
 # LOAD DATA
@@ -33,7 +33,7 @@ selected_date = st.date_input(
 # =====================
 # PREDIKSI
 # =====================
-if st.button("🔮 Prediksi 24 Jam Ke Depan"):
+if st.button("🔮 Prediksi"):
 
     pred = forecast_for_date(df_model, selected_date)
 
@@ -48,7 +48,7 @@ if st.button("🔮 Prediksi 24 Jam Ke Depan"):
     # =====================
     # TABLE
     # =====================
-    st.subheader("📋 Hasil Prediksi Per Jam")
+    st.subheader("📋 Hasil Prediksi")
 
     def color_status(val):
         if val == "Aman":
@@ -124,7 +124,4 @@ if st.button("🔮 Prediksi 24 Jam Ke Depan"):
 
     st.pyplot(fig)
 
-    st.info(
-        "ℹ️ Data ditampilkan hanya untuk tanggal yang dipilih. "
-        "Grafik bersifat interaktif (zoom & hover)."
-    )
+    
